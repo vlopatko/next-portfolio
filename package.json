@@ -46,13 +46,10 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo \"[Husky] pre-commit\""
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "app/**/*.{ts,tsx,html,css}": "pnpm run fix-all",
-    "components/**/*.{ts,tsx,html,css}": "pnpm run fix-all",
-    "app/**/*.{ts,tsx}": "pnpm run fix-all",
-    "components/**/*.{ts,tsx}": "pnpm run fix-all"
+    "src/**/*.{ts,tsx,html,css}": "pnpm run fix-all"
   }
 }
