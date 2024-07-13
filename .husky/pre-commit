@@ -1,0 +1,46 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo '🏗️👷 Styling, formating and building your project before committing'
+
+# # Check Prettier standards
+# pnpm run format ||
+# (
+#   echo '🤮Prettier Check Failed. Fix issues, run "npm run format", and try commit again.🤮';
+#   false;
+# )
+
+# # Check ESlint standards
+# pnpm run lint ||
+# (
+#   echo 'ESlint Check Failed. Fix issues, run "npm run lint", and try commit again.🤮';
+#   false;
+# )
+
+# Check ESLint Standards for staged files
+pnpx lint-staged ||
+(
+  echo '👋Staged files was checked!👋
+    Some of ESlint & Prettier & lint-staged - checks Failed. Make the required changes listed above, add changes and try to commit again.'
+  false;
+)
+
+# # Check tsconfig standards
+# pnpm run check-types ||
+# (
+#   echo '🤡Failed Type check.🤡'
+#   false;
+# )
+
+# If everything passes... Now we can commit
+echo '🤔Code looks good.Trying to build now.🤔'
+
+pnpm run build ||
+(
+  echo '❌👷🔨 Your build failed 🔨👷❌
+    Next build failed: View the errors above to see why.'
+  false;
+)
+
+# If everything passes... Now we can commit
+echo '✅✅✅ Ok, I am committing this shit. ✅✅✅'
