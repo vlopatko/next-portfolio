@@ -43,4 +43,4 @@ pnpm run build ||
 )
 
 # If everything passes... Now we can commit
-echo '✅✅✅ Ok, I am committing this shit. ✅✅✅'
+echo '✅✅✅Ok, everything was committed.✅✅✅'
