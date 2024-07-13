@@ -42,7 +42,7 @@
     "check-types": "tsc --pretty --noEmit",
     "format": "prettier . --ignore-path .gitignore --write",
     "lint": "eslint . --ignore-path .gitignore --fix",
-    "fix-all": "pnpm run format & pnpm run lint & pnpm run check-types"
+    "fix-all": "pnpm run format && pnpm run lint && pnpm run check-types"
   },
   "husky": {
     "hooks": {
